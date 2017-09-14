@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Data` struct in crate `h2`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Data">
+
+    <title>h2::frame::Data - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Data</p><div class="block items"><ul><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../index.html'>h2</a>::<wbr><a href='index.html'>frame</a></p><script>window.sidebarCurrent = {name: 'Data', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>h2</a>::<wbr><a href='index.html'>frame</a>::<wbr><a class="struct" href=''>Data</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/h2/frame/data.rs.html#12-17' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Data&lt;T&nbsp;=&nbsp;<a class="struct" href="https://docs.rs/bytes/0.4/bytes/bytes/struct.Bytes.html" title="struct bytes::bytes::Bytes">Bytes</a>&gt; { /* fields omitted */ }</pre><div class='docblock'><p>Data frame</p>
+
+<p>Data frames convey arbitrary, variable-length sequences of octets associated
+with a stream. One or more DATA frames are used, for instance, to carry HTTP
+request or response payloads.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class="struct" href="../../h2/frame/struct.Data.html" title="struct h2::frame::Data">Data</a>&lt;T&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/data.rs.html#26-105' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>fn <a href='#method.new' class='fnname'>new</a>(stream_id: <a class="struct" href="../../h2/frame/struct.StreamId.html" title="struct h2::frame::StreamId">StreamId</a>, payload: T) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/data.rs.html#28-37' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates a new DATA frame.</p>
+</div><h4 id='method.stream_id' class="method"><span id='stream_id.v' class='invisible'><code>fn <a href='#method.stream_id' class='fnname'>stream_id</a>(&amp;self) -&gt; <a class="struct" href="../../h2/frame/struct.StreamId.html" title="struct h2::frame::StreamId">StreamId</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/data.rs.html#42-44' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the stream identifer that this frame is associated with.</p>
+
+<p>This cannot be a zero stream identifier.</p>
+</div><h4 id='method.is_end_stream' class="method"><span id='is_end_stream.v' class='invisible'><code>fn <a href='#method.is_end_stream' class='fnname'>is_end_stream</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/data.rs.html#53-55' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the value of the <code>END_STREAM</code> flag for this frame.</p>
+
+<p>If true, this frame is the last that the endpoint will send for the
+identified stream.</p>
+
+<p>Setting this flag causes the stream to enter one of the &quot;half-closed&quot;
+states or the &quot;closed&quot; state (Section 5.1).</p>
+</div><h4 id='method.set_end_stream' class="method"><span id='set_end_stream.v' class='invisible'><code>fn <a href='#method.set_end_stream' class='fnname'>set_end_stream</a>(&amp;mut self, val: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/data.rs.html#58-64' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Sets the value for the <code>END_STREAM</code> flag on this frame.</p>
+</div><h4 id='method.payload' class="method"><span id='payload.v' class='invisible'><code>fn <a href='#method.payload' class='fnname'>payload</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/data.rs.html#70-72' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a reference to this frame&#39;s payload.</p>
+
+<p>This does <strong>not</strong> include any padding that might have been originally
+included.</p>
+</div><h4 id='method.payload_mut' class="method"><span id='payload_mut.v' class='invisible'><code>fn <a href='#method.payload_mut' class='fnname'>payload_mut</a>(&amp;mut self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>T</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/data.rs.html#78-80' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a mutable reference to this frame&#39;s payload.</p>
+
+<p>This does <strong>not</strong> include any padding that might have been originally
+included.</p>
+</div><h4 id='method.into_payload' class="method"><span id='into_payload.v' class='invisible'><code>fn <a href='#method.into_payload' class='fnname'>into_payload</a>(self) -&gt; T</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/data.rs.html#86-88' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Consumes <code>self</code> and returns the frame&#39;s payload.</p>
+
+<p>This does <strong>not</strong> include any padding that might have been originally
+included.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Eq' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="struct" href="../../h2/frame/struct.Data.html" title="struct h2::frame::Data">Data</a>&lt;T&gt;</code><a href='#impl-Eq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/data.rs.html#11' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="struct" href="../../h2/frame/struct.Data.html" title="struct h2::frame::Data">Data</a>&lt;T&gt;</code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/data.rs.html#11' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../h2/frame/struct.Data.html" title="struct h2::frame::Data">Data</a>&lt;T&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/data.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../h2/frame/struct.Data.html" title="struct h2::frame::Data">Data</a>&lt;T&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/data.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../h2/frame/struct.Data.html" title="struct h2::frame::Data">Data</a>&lt;T&gt;</code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/data.rs.html#151-160' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, fmt: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/data.rs.html#152-159' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "h2";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

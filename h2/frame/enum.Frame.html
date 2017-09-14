@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Frame` enum in crate `h2`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Frame">
+
+    <title>h2::frame::Frame - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum Frame</p><div class="block items"><ul><li><a href="#variants">Variants</a></li><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../index.html'>h2</a>::<wbr><a href='index.html'>frame</a></p><script>window.sidebarCurrent = {name: 'Frame', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>h2</a>::<wbr><a href='index.html'>frame</a>::<wbr><a class="enum" href=''>Frame</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/h2/frame/mod.rs.html#69-79' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum Frame&lt;T&nbsp;=&nbsp;<a class="struct" href="https://docs.rs/bytes/0.4/bytes/bytes/struct.Bytes.html" title="struct bytes::bytes::Bytes">Bytes</a>&gt; {
+    Data(<a class="struct" href="../../h2/frame/struct.Data.html" title="struct h2::frame::Data">Data</a>&lt;T&gt;),
+    Headers(<a class="struct" href="../../h2/frame/struct.Headers.html" title="struct h2::frame::Headers">Headers</a>),
+    Priority(<a class="struct" href="../../h2/frame/struct.Priority.html" title="struct h2::frame::Priority">Priority</a>),
+    PushPromise(<a class="struct" href="../../h2/frame/struct.PushPromise.html" title="struct h2::frame::PushPromise">PushPromise</a>),
+    Settings(<a class="struct" href="../../h2/frame/struct.Settings.html" title="struct h2::frame::Settings">Settings</a>),
+    Ping(<a class="struct" href="../../h2/frame/struct.Ping.html" title="struct h2::frame::Ping">Ping</a>),
+    GoAway(<a class="struct" href="../../h2/frame/struct.GoAway.html" title="struct h2::frame::GoAway">GoAway</a>),
+    WindowUpdate(<a class="struct" href="../../h2/frame/struct.WindowUpdate.html" title="struct h2::frame::WindowUpdate">WindowUpdate</a>),
+    Reset(<a class="struct" href="../../h2/frame/struct.Reset.html" title="struct h2::frame::Reset">Reset</a>),
+}</pre><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id='variant.Data' class='variant'><span id='Data.v' class='invisible'><code>Data(<a class="struct" href="../../h2/frame/struct.Data.html" title="struct h2::frame::Data">Data</a>&lt;T&gt;)</code></span></span><span id='variant.Headers' class='variant'><span id='Headers.v' class='invisible'><code>Headers(<a class="struct" href="../../h2/frame/struct.Headers.html" title="struct h2::frame::Headers">Headers</a>)</code></span></span><span id='variant.Priority' class='variant'><span id='Priority.v' class='invisible'><code>Priority(<a class="struct" href="../../h2/frame/struct.Priority.html" title="struct h2::frame::Priority">Priority</a>)</code></span></span><span id='variant.PushPromise' class='variant'><span id='PushPromise.v' class='invisible'><code>PushPromise(<a class="struct" href="../../h2/frame/struct.PushPromise.html" title="struct h2::frame::PushPromise">PushPromise</a>)</code></span></span><span id='variant.Settings' class='variant'><span id='Settings.v' class='invisible'><code>Settings(<a class="struct" href="../../h2/frame/struct.Settings.html" title="struct h2::frame::Settings">Settings</a>)</code></span></span><span id='variant.Ping' class='variant'><span id='Ping.v' class='invisible'><code>Ping(<a class="struct" href="../../h2/frame/struct.Ping.html" title="struct h2::frame::Ping">Ping</a>)</code></span></span><span id='variant.GoAway' class='variant'><span id='GoAway.v' class='invisible'><code>GoAway(<a class="struct" href="../../h2/frame/struct.GoAway.html" title="struct h2::frame::GoAway">GoAway</a>)</code></span></span><span id='variant.WindowUpdate' class='variant'><span id='WindowUpdate.v' class='invisible'><code>WindowUpdate(<a class="struct" href="../../h2/frame/struct.WindowUpdate.html" title="struct h2::frame::WindowUpdate">WindowUpdate</a>)</code></span></span><span id='variant.Reset' class='variant'><span id='Reset.v' class='invisible'><code>Reset(<a class="struct" href="../../h2/frame/struct.Reset.html" title="struct h2::frame::Reset">Reset</a>)</code></span></span>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class="enum" href="../../h2/frame/enum.Frame.html" title="enum h2::frame::Frame">Frame</a>&lt;T&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/mod.rs.html#81-100' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.map' class="method"><span id='map.v' class='invisible'><code>fn <a href='#method.map' class='fnname'>map</a>&lt;F, U&gt;(self, f: F) -&gt; <a class="enum" href="../../h2/frame/enum.Frame.html" title="enum h2::frame::Frame">Frame</a>&lt;U&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html" title="trait core::ops::function::FnOnce">FnOnce</a>(T) -&gt; U,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/mod.rs.html#82-99' title='goto source code'>[src]</a></span></h4>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-From&lt;Data&lt;T&gt;&gt;' class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../h2/frame/struct.Data.html" title="struct h2::frame::Data">Data</a>&lt;T&gt;&gt; for <a class="enum" href="../../h2/frame/enum.Frame.html" title="enum h2::frame::Frame">Frame</a>&lt;T&gt;</code><a href='#impl-From&lt;Data&lt;T&gt;&gt;' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/data.rs.html#145-149' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from' class="method"><span id='from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(src: <a class="struct" href="../../h2/frame/struct.Data.html" title="struct h2::frame::Data">Data</a>&lt;T&gt;) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/data.rs.html#146-148' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From&lt;GoAway&gt;' class='impl'><span class='in-band'><code>impl&lt;B&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../h2/frame/struct.GoAway.html" title="struct h2::frame::GoAway">GoAway</a>&gt; for <a class="enum" href="../../h2/frame/enum.Frame.html" title="enum h2::frame::Frame">Frame</a>&lt;B&gt;</code><a href='#impl-From&lt;GoAway&gt;' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/go_away.rs.html#53-57' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-1' class="method"><span id='from.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(src: <a class="struct" href="../../h2/frame/struct.GoAway.html" title="struct h2::frame::GoAway">GoAway</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/go_away.rs.html#54-56' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From&lt;Headers&gt;' class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../h2/frame/struct.Headers.html" title="struct h2::frame::Headers">Headers</a>&gt; for <a class="enum" href="../../h2/frame/enum.Frame.html" title="enum h2::frame::Frame">Frame</a>&lt;T&gt;</code><a href='#impl-From&lt;Headers&gt;' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/headers.rs.html#309-313' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-2' class="method"><span id='from.v-2' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(src: <a class="struct" href="../../h2/frame/struct.Headers.html" title="struct h2::frame::Headers">Headers</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/headers.rs.html#310-312' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From&lt;PushPromise&gt;' class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../h2/frame/struct.PushPromise.html" title="struct h2::frame::PushPromise">PushPromise</a>&gt; for <a class="enum" href="../../h2/frame/enum.Frame.html" title="enum h2::frame::Frame">Frame</a>&lt;T&gt;</code><a href='#impl-From&lt;PushPromise&gt;' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/headers.rs.html#352-356' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-3' class="method"><span id='from.v-3' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(src: <a class="struct" href="../../h2/frame/struct.PushPromise.html" title="struct h2::frame::PushPromise">PushPromise</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/headers.rs.html#353-355' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From&lt;Ping&gt;' class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../h2/frame/struct.Ping.html" title="struct h2::frame::Ping">Ping</a>&gt; for <a class="enum" href="../../h2/frame/enum.Frame.html" title="enum h2::frame::Frame">Frame</a>&lt;T&gt;</code><a href='#impl-From&lt;Ping&gt;' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/ping.rs.html#89-93' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-4' class="method"><span id='from.v-4' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(src: <a class="struct" href="../../h2/frame/struct.Ping.html" title="struct h2::frame::Ping">Ping</a>) -&gt; <a class="enum" href="../../h2/frame/enum.Frame.html" title="enum h2::frame::Frame">Frame</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/ping.rs.html#90-92' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From&lt;Priority&gt;' class='impl'><span class='in-band'><code>impl&lt;B&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../h2/frame/struct.Priority.html" title="struct h2::frame::Priority">Priority</a>&gt; for <a class="enum" href="../../h2/frame/enum.Frame.html" title="enum h2::frame::Frame">Frame</a>&lt;B&gt;</code><a href='#impl-From&lt;Priority&gt;' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/priority.rs.html#38-42' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-5' class="method"><span id='from.v-5' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(src: <a class="struct" href="../../h2/frame/struct.Priority.html" title="struct h2::frame::Priority">Priority</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/priority.rs.html#39-41' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From&lt;Reset&gt;' class='impl'><span class='in-band'><code>impl&lt;B&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../h2/frame/struct.Reset.html" title="struct h2::frame::Reset">Reset</a>&gt; for <a class="enum" href="../../h2/frame/enum.Frame.html" title="enum h2::frame::Frame">Frame</a>&lt;B&gt;</code><a href='#impl-From&lt;Reset&gt;' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/reset.rs.html#52-56' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-6' class="method"><span id='from.v-6' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(src: <a class="struct" href="../../h2/frame/struct.Reset.html" title="struct h2::frame::Reset">Reset</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/reset.rs.html#53-55' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From&lt;Settings&gt;' class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../h2/frame/struct.Settings.html" title="struct h2::frame::Settings">Settings</a>&gt; for <a class="enum" href="../../h2/frame/enum.Frame.html" title="enum h2::frame::Frame">Frame</a>&lt;T&gt;</code><a href='#impl-From&lt;Settings&gt;' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/settings.rs.html#201-205' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-7' class="method"><span id='from.v-7' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(src: <a class="struct" href="../../h2/frame/struct.Settings.html" title="struct h2::frame::Settings">Settings</a>) -&gt; <a class="enum" href="../../h2/frame/enum.Frame.html" title="enum h2::frame::Frame">Frame</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/settings.rs.html#202-204' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From&lt;WindowUpdate&gt;' class='impl'><span class='in-band'><code>impl&lt;B&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../h2/frame/struct.WindowUpdate.html" title="struct h2::frame::WindowUpdate">WindowUpdate</a>&gt; for <a class="enum" href="../../h2/frame/enum.Frame.html" title="enum h2::frame::Frame">Frame</a>&lt;B&gt;</code><a href='#impl-From&lt;WindowUpdate&gt;' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/window_update.rs.html#58-62' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-8' class="method"><span id='from.v-8' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(src: <a class="struct" href="../../h2/frame/struct.WindowUpdate.html" title="struct h2::frame::WindowUpdate">WindowUpdate</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/window_update.rs.html#59-61' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-Eq' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="enum" href="../../h2/frame/enum.Frame.html" title="enum h2::frame::Frame">Frame</a>&lt;T&gt;</code><a href='#impl-Eq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/mod.rs.html#68' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="enum" href="../../h2/frame/enum.Frame.html" title="enum h2::frame::Frame">Frame</a>&lt;T&gt;</code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/mod.rs.html#68' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../../h2/frame/enum.Frame.html" title="enum h2::frame::Frame">Frame</a>&lt;T&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/mod.rs.html#68' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../../h2/frame/enum.Frame.html" title="enum h2::frame::Frame">Frame</a>&lt;T&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/mod.rs.html#68' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../../h2/frame/enum.Frame.html" title="enum h2::frame::Frame">Frame</a>&lt;T&gt;</code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/mod.rs.html#102-118' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, fmt: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/h2/frame/mod.rs.html#103-117' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "h2";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

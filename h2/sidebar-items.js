@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Reason",""],["RecvError","Errors that are received"],["SendError","Errors caused by sending a message"],["UserError","Errors caused by users of the library"]],"mod":[["client",""],["frame",""],["server",""]],"struct":[["Codec",""],["Error","The error type for HTTP/2 operations"]]});
